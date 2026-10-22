@@ -50,3 +50,15 @@ export interface AchievementItem {
   description: string;
   type: 'award' | 'event' | 'sport' | 'certification';
 }
+
+export interface MarketingPlatform {
+  id: string;
+  name: string;
+  category: string;
+  badge: 'Active Platform Exposure' | 'Foundational / Active Learning' | 'Technical Tooling';
+  brandColor: string;
+  accentBg: string;
+  roleInStack: string;
+  description: string;
+  capabilities: string[];
+}

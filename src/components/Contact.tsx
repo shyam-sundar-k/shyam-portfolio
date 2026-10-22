@@ -60,40 +60,42 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
       return;
     }
 
-    const emailSubject = encodeURIComponent(`Portfolio Inquiry: ${topic} (from ${name})`);
+    const emailSubject = encodeURIComponent(`Performance Marketing Inquiry: ${topic} (from ${name})`);
     const emailBody = encodeURIComponent(
-      `Hi Shyam,\n\nMy name is ${name} (${senderEmail}).\n\nTopic: ${topic}\n\nMessage:\n${message}\n\n---\nSent via Shyam Sundar K Portfolio`
+      `Hi Shyam,\n\nMy name is ${name} (${senderEmail}).\n\nTopic: ${topic}\n\nMessage:\n${message}\n\n---\nSent via Shyam Sundar K - Performance Marketing Lab`
     );
 
     // Open native email client
     window.location.href = `mailto:${personalInfo.email}?subject=${emailSubject}&body=${emailBody}`;
 
     setFormSubmitted(true);
-    onNotify('Email composer opened. A copy is ready for you.');
+    onNotify('Email composer launched. A copy is ready for you.');
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-[#171815] text-[#F6F5F0] relative overflow-hidden">
-      {/* Background architectural fine dark grid */}
-      <div className="absolute inset-0 opacity-15 pointer-events-none editorial-dark-grid-bg" />
+    <section id="contact" className="py-24 sm:py-32 bg-[#080B14] text-[#F5F7FF] relative overflow-hidden border-t border-[rgba(180,200,255,0.14)]">
+      {/* Background Cyber Grid & Radiant Blooms */}
+      <div className="absolute inset-0 cyber-grid-dense opacity-20 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#37E7FF]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#9A6BFF]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Eyebrow */}
         <div className="flex items-center gap-3 mb-6">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#C5ED70]">
+          <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#37E7FF]">
             07 / LET'S CONNECT
           </span>
-          <div className="h-px bg-white/10 flex-1 max-w-xs" />
+          <div className="h-px bg-gradient-to-r from-[#37E7FF]/40 to-transparent flex-1 max-w-xs" />
         </div>
 
         {/* Section Headline */}
         <div className="max-w-3xl mb-16">
-          <h2 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#F6F5F0] tracking-tight mb-6 leading-[1.08]">
-            “Good ideas deserve a conversation.”
+          <h2 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#F5F7FF] tracking-tight mb-6 leading-[1.05]">
+            “Let's turn curiosity into something meaningful.”
           </h2>
-          <p className="text-base sm:text-lg text-[#DADAD2] leading-relaxed font-normal">
-            Interested in digital marketing, creative strategy, or performance-driven growth? I'd be glad to connect, exchange ideas, and explore opportunities to learn and contribute.
+          <p className="text-base sm:text-lg text-[#A6B0C8] leading-relaxed font-normal">
+            I'm interested in digital marketing, creative problem-solving, and the possibilities of performance-driven growth. Have an opportunity, idea, or project in mind? Let's connect.
           </p>
         </div>
 
@@ -107,19 +109,19 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
             <div className="space-y-4">
               
               {/* Email Card */}
-              <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#C5ED70] transition-colors group">
+              <div className="p-6 rounded-2xl glass-panel-elevated hover:border-[#37E7FF]/60 transition-all duration-300 group">
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-[#C5ED70]">
+                  <div className="flex items-center gap-3.5">
+                    <div className="p-3 rounded-xl bg-[#080B14] border border-[rgba(180,200,255,0.15)] text-[#37E7FF] group-hover:scale-105 transition-transform">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#DADAD2] block">
-                        Email Address
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#A6B0C8] block">
+                        Verified Direct Email
                       </span>
                       <a
                         href={`mailto:${personalInfo.email}`}
-                        className="text-base sm:text-lg font-mono font-semibold text-[#F6F5F0] hover:text-[#C5ED70] transition-colors"
+                        className="text-base sm:text-lg font-mono font-semibold text-[#F5F7FF] hover:text-[#37E7FF] transition-colors"
                       >
                         {personalInfo.email}
                       </a>
@@ -128,29 +130,29 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
 
                   <button
                     onClick={handleCopyEmail}
-                    title="Copy Email"
-                    className="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-[#DADAD2] hover:text-[#F6F5F0] transition-colors"
+                    title="Copy Email Address"
+                    className="p-2.5 rounded-lg bg-[#080B14] hover:bg-[#151D32] text-[#A6B0C8] hover:text-[#37E7FF] border border-[rgba(180,200,255,0.1)] transition-colors cursor-pointer"
                     aria-label="Copy Email address"
                   >
-                    {copiedEmail ? <Check className="w-4 h-4 text-[#C5ED70]" /> : <Copy className="w-4 h-4" />}
+                    {copiedEmail ? <Check className="w-4 h-4 text-[#D7FF62]" /> : <Copy className="w-4 h-4" />}
                   </button>
                 </div>
               </div>
 
               {/* Phone Card */}
-              <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#C5ED70] transition-colors group">
+              <div className="p-6 rounded-2xl glass-panel-elevated hover:border-[#37E7FF]/60 transition-all duration-300 group">
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-[#C5ED70]">
+                  <div className="flex items-center gap-3.5">
+                    <div className="p-3 rounded-xl bg-[#080B14] border border-[rgba(180,200,255,0.15)] text-[#37E7FF] group-hover:scale-105 transition-transform">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#DADAD2] block">
-                        Direct Phone
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#A6B0C8] block">
+                        Direct Phone (IST)
                       </span>
                       <a
                         href={`tel:${personalInfo.phone}`}
-                        className="text-base sm:text-lg font-mono font-semibold text-[#F6F5F0] hover:text-[#C5ED70] transition-colors"
+                        className="text-base sm:text-lg font-mono font-semibold text-[#F5F7FF] hover:text-[#37E7FF] transition-colors"
                       >
                         {personalInfo.phoneFormatted}
                       </a>
@@ -160,37 +162,37 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
                   <button
                     onClick={handleCopyPhone}
                     title="Copy Phone Number"
-                    className="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-[#DADAD2] hover:text-[#F6F5F0] transition-colors"
+                    className="p-2.5 rounded-lg bg-[#080B14] hover:bg-[#151D32] text-[#A6B0C8] hover:text-[#37E7FF] border border-[rgba(180,200,255,0.1)] transition-colors cursor-pointer"
                     aria-label="Copy Phone number"
                   >
-                    {copiedPhone ? <Check className="w-4 h-4 text-[#C5ED70]" /> : <Copy className="w-4 h-4" />}
+                    {copiedPhone ? <Check className="w-4 h-4 text-[#D7FF62]" /> : <Copy className="w-4 h-4" />}
                   </button>
                 </div>
               </div>
 
               {/* Location Card with Live Bengaluru Clock */}
-              <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <div className="p-6 rounded-2xl glass-panel-elevated">
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-[#C5ED70]">
+                  <div className="flex items-center gap-3.5">
+                    <div className="p-3 rounded-xl bg-[#080B14] border border-[rgba(180,200,255,0.15)] text-[#9A6BFF]">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#DADAD2] block">
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#A6B0C8] block">
                         Location & Timezone
                       </span>
-                      <span className="text-base font-semibold text-[#F6F5F0]">
+                      <span className="text-base font-semibold text-[#F5F7FF]">
                         {personalInfo.location}
                       </span>
                     </div>
                   </div>
 
                   <div className="text-right">
-                    <div className="flex items-center gap-1.5 text-xs font-mono text-[#C5ED70]">
+                    <div className="flex items-center gap-1.5 text-xs font-mono text-[#D7FF62]">
                       <Clock className="w-3.5 h-3.5" />
                       <span>{istTime || 'IST UTC+5:30'}</span>
                     </div>
-                    <span className="text-[10px] font-mono text-[#DADAD2] block">Bengaluru Time</span>
+                    <span className="text-[10px] font-mono text-[#A6B0C8] block">Bengaluru Time</span>
                   </div>
                 </div>
               </div>
@@ -200,16 +202,16 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
             {/* Direct Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <a
-                href={`mailto:${personalInfo.email}?subject=Let's%20Connect%20-%20Digital%20Marketing`}
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#C5ED70] text-[#171815] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-full hover:bg-white transition-all duration-200 shadow-md font-mono"
+                href={`mailto:${personalInfo.email}?subject=Start%20a%20Conversation%20-%20Performance%20Marketing`}
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#37E7FF] via-[#9A6BFF] to-[#D7FF62] text-[#080B14] text-xs sm:text-sm font-mono font-extrabold uppercase tracking-wider rounded-full hover:shadow-[0_0_30px_rgba(55,231,255,0.5)] transition-all duration-300 cursor-pointer"
               >
-                <Mail className="w-4 h-4" />
-                <span>Send Me an Email</span>
+                <Mail className="w-4 h-4 stroke-[2.5]" />
+                <span>Start a Conversation</span>
               </a>
 
               <button
                 onClick={onBackToTop}
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-[#F6F5F0] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-full border border-white/20 hover:bg-white/20 transition-all duration-200 font-mono"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#101527] text-[#F5F7FF] text-xs sm:text-sm font-mono font-bold uppercase tracking-wider rounded-full border border-[rgba(180,200,255,0.2)] hover:border-[#37E7FF] hover:bg-[#151D32] transition-all duration-200 cursor-pointer"
               >
                 <span>Back to the Top</span>
                 <ArrowUp className="w-4 h-4" />
@@ -220,35 +222,35 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
 
           {/* Right Column: Direct Functional Message Composer */}
           <div className="lg:col-span-7">
-            <div className="p-7 sm:p-9 rounded-2xl bg-[#20221E] border border-white/10 shadow-2xl relative">
+            <div className="p-7 sm:p-9 rounded-2xl glass-panel-elevated border border-[rgba(180,200,255,0.18)] shadow-2xl relative">
               
-              <div className="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
+              <div className="flex items-center justify-between pb-6 mb-6 border-b border-[rgba(180,200,255,0.12)]">
                 <div>
-                  <h3 className="font-display font-bold text-xl text-[#F6F5F0]">
-                    Direct Message Dispatch
+                  <h3 className="font-display font-bold text-xl text-[#F5F7FF]">
+                    Direct Dispatch Channel
                   </h3>
-                  <p className="text-xs text-[#DADAD2] mt-0.5">
-                    Pre-fills your inquiry directly into your email client
+                  <p className="text-xs text-[#A6B0C8] mt-0.5">
+                    Pre-formats your inquiry directly into your email client
                   </p>
                 </div>
-                <Sparkles className="w-5 h-5 text-[#C5ED70]" />
+                <Sparkles className="w-5 h-5 text-[#37E7FF]" />
               </div>
 
               {formSubmitted ? (
-                <div className="p-6 bg-white/5 rounded-xl border border-[#C5ED70]/40 space-y-4 animate-fade-in text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#C5ED70] text-[#171815] flex items-center justify-center mx-auto">
+                <div className="p-6 bg-[#080B14]/80 rounded-xl border border-[#37E7FF]/40 space-y-4 animate-fade-in text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#37E7FF] text-[#080B14] flex items-center justify-center mx-auto shadow-[0_0_20px_#37E7FF]">
                     <Check className="w-6 h-6 stroke-[3]" />
                   </div>
-                  <h4 className="font-display font-bold text-lg text-[#F6F5F0]">
+                  <h4 className="font-display font-bold text-lg text-[#F5F7FF]">
                     Inquiry Ready to Dispatch
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#DADAD2] max-w-md mx-auto">
-                    Your default email client has been launched with your message addressed to <span className="text-[#C5ED70] font-mono">{personalInfo.email}</span>.
+                  <p className="text-xs sm:text-sm text-[#A6B0C8] max-w-md mx-auto">
+                    Your default email client has been launched with your message addressed to <span className="text-[#37E7FF] font-mono">{personalInfo.email}</span>.
                   </p>
                   <div className="pt-2">
                     <button
                       onClick={() => setFormSubmitted(false)}
-                      className="px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider bg-white/10 text-[#F6F5F0] rounded-lg hover:bg-white/20 transition-colors"
+                      className="px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider bg-[#151D32] text-[#F5F7FF] rounded-lg hover:border-[#37E7FF] border border-transparent transition-colors cursor-pointer"
                     >
                       Compose Another Message
                     </button>
@@ -260,8 +262,8 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
                     
                     {/* Name Field */}
                     <div>
-                      <label htmlFor="name" className="block text-xs font-mono uppercase tracking-wider text-[#DADAD2] mb-1.5 font-medium">
-                        Your Name <span className="text-[#C5ED70]">*</span>
+                      <label htmlFor="name" className="block text-xs font-mono uppercase tracking-wider text-[#A6B0C8] mb-1.5 font-medium">
+                        Your Name <span className="text-[#37E7FF]">*</span>
                       </label>
                       <input
                         id="name"
@@ -270,14 +272,14 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="e.g. Jane Doe"
-                        className="w-full px-4 py-3 bg-[#171815] border border-white/15 rounded-lg text-sm text-[#F6F5F0] placeholder-[#6D6D65] focus:outline-hidden focus:border-[#C5ED70] focus:ring-1 focus:ring-[#C5ED70] transition-colors"
+                        className="w-full px-4 py-3 bg-[#080B14] border border-[rgba(180,200,255,0.16)] rounded-xl text-sm text-[#F5F7FF] placeholder-[#A6B0C8]/40 focus:outline-hidden focus:border-[#37E7FF] focus:ring-1 focus:ring-[#37E7FF] transition-colors"
                       />
                     </div>
 
                     {/* Email Field */}
                     <div>
-                      <label htmlFor="email" className="block text-xs font-mono uppercase tracking-wider text-[#DADAD2] mb-1.5 font-medium">
-                        Your Email <span className="text-[#C5ED70]">*</span>
+                      <label htmlFor="email" className="block text-xs font-mono uppercase tracking-wider text-[#A6B0C8] mb-1.5 font-medium">
+                        Your Email <span className="text-[#37E7FF]">*</span>
                       </label>
                       <input
                         id="email"
@@ -286,7 +288,7 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
                         value={senderEmail}
                         onChange={(e) => setSenderEmail(e.target.value)}
                         placeholder="e.g. jane@company.com"
-                        className="w-full px-4 py-3 bg-[#171815] border border-white/15 rounded-lg text-sm text-[#F6F5F0] placeholder-[#6D6D65] focus:outline-hidden focus:border-[#C5ED70] focus:ring-1 focus:ring-[#C5ED70] transition-colors"
+                        className="w-full px-4 py-3 bg-[#080B14] border border-[rgba(180,200,255,0.16)] rounded-xl text-sm text-[#F5F7FF] placeholder-[#A6B0C8]/40 focus:outline-hidden focus:border-[#37E7FF] focus:ring-1 focus:ring-[#37E7FF] transition-colors"
                       />
                     </div>
 
@@ -294,14 +296,14 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
 
                   {/* Topic Select */}
                   <div>
-                    <label htmlFor="topic" className="block text-xs font-mono uppercase tracking-wider text-[#DADAD2] mb-1.5 font-medium">
+                    <label htmlFor="topic" className="block text-xs font-mono uppercase tracking-wider text-[#A6B0C8] mb-1.5 font-medium">
                       Inquiry Topic
                     </label>
                     <select
                       id="topic"
                       value={topic}
                       onChange={(e) => setTopic(e.target.value)}
-                      className="w-full px-4 py-3 bg-[#171815] border border-white/15 rounded-lg text-sm text-[#F6F5F0] focus:outline-hidden focus:border-[#C5ED70] focus:ring-1 focus:ring-[#C5ED70] transition-colors"
+                      className="w-full px-4 py-3 bg-[#080B14] border border-[rgba(180,200,255,0.16)] rounded-xl text-sm text-[#F5F7FF] focus:outline-hidden focus:border-[#37E7FF] focus:ring-1 focus:ring-[#37E7FF] transition-colors"
                     >
                       <option value="Performance Marketing Discussion">Performance Marketing Discussion</option>
                       <option value="Digital Marketing Collaboration">Digital Marketing Collaboration</option>
@@ -313,8 +315,8 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
 
                   {/* Message Field */}
                   <div>
-                    <label htmlFor="message" className="block text-xs font-mono uppercase tracking-wider text-[#DADAD2] mb-1.5 font-medium">
-                      Message <span className="text-[#C5ED70]">*</span>
+                    <label htmlFor="message" className="block text-xs font-mono uppercase tracking-wider text-[#A6B0C8] mb-1.5 font-medium">
+                      Message <span className="text-[#37E7FF]">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -323,21 +325,21 @@ export const Contact: React.FC<ContactProps> = ({ onNotify, onBackToTop }) => {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Share context on what you would like to discuss..."
-                      className="w-full px-4 py-3 bg-[#171815] border border-white/15 rounded-lg text-sm text-[#F6F5F0] placeholder-[#6D6D65] focus:outline-hidden focus:border-[#C5ED70] focus:ring-1 focus:ring-[#C5ED70] transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-[#080B14] border border-[rgba(180,200,255,0.16)] rounded-xl text-sm text-[#F5F7FF] placeholder-[#A6B0C8]/40 focus:outline-hidden focus:border-[#37E7FF] focus:ring-1 focus:ring-[#37E7FF] transition-colors resize-none"
                     />
                   </div>
 
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-[#C5ED70] text-[#171815] font-mono text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-white transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                    className="w-full py-3.5 bg-gradient-to-r from-[#37E7FF] to-[#9A6BFF] text-[#080B14] font-mono text-xs font-extrabold uppercase tracking-wider rounded-xl hover:shadow-[0_0_25px_rgba(55,231,255,0.4)] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>Launch Email Client</span>
+                    <Send className="w-4 h-4 stroke-[2.5]" />
+                    <span>Launch Email Dispatch</span>
                   </button>
 
-                  <p className="text-[11px] font-mono text-[#6D6D65] text-center pt-1">
-                    Direct integration · No simulated database submissions or silent drops
+                  <p className="text-[11px] font-mono text-[#A6B0C8] text-center pt-1">
+                    Direct client integration · No fake backend endpoints or silent message drops
                   </p>
                 </form>
               )}

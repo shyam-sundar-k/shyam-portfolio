@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { MarketingConstellation } from './components/MarketingConstellation';
 import { About } from './components/About';
 import { Direction } from './components/Direction';
 import { Experience } from './components/Experience';
@@ -11,9 +12,11 @@ import { Personality } from './components/Personality';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Toast } from './components/Toast';
+import { MarketingLabModal } from './components/MarketingLabModal';
 
 export function App() {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [isLabOpen, setIsLabOpen] = useState(false);
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
@@ -22,7 +25,7 @@ export function App() {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const topOffset = 80;
+      const topOffset = 84;
       const elementPosition = el.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - topOffset;
       window.scrollTo({
@@ -40,9 +43,12 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F6F5F0] text-[#171815] selection:bg-[#C5ED70] selection:text-[#171815]">
+    <div className="min-h-screen bg-[#080B14] text-[#F5F7FF] selection:bg-[#37E7FF] selection:text-[#080B14]">
       {/* Navigation */}
-      <Navbar onTalkClick={() => scrollToSection('contact')} />
+      <Navbar
+        onTalkClick={() => scrollToSection('contact')}
+        onOpenLab={() => setIsLabOpen(true)}
+      />
 
       {/* Main Content */}
       <main>
@@ -50,9 +56,13 @@ export function App() {
         <Hero
           onExploreClick={() => scrollToSection('work')}
           onConnectClick={() => scrollToSection('contact')}
+          onOpenLab={() => setIsLabOpen(true)}
         />
 
-        {/* Section 01: About */}
+        {/* Marketing Constellation (Section 06 Ecosystem) */}
+        <MarketingConstellation />
+
+        {/* Section 01: About (The Person Behind the Campaigns) */}
         <About />
 
         {/* Section 02: Performance Marketing Direction */}
@@ -73,7 +83,7 @@ export function App() {
         {/* Section 09: Personality & Dimensions */}
         <Personality />
 
-        {/* Section 07 / Contact: Strategic Near-Black Editorial Section */}
+        {/* Section 07 / Contact: Strategic High-Impact Cyber Section */}
         <Contact
           onNotify={showToast}
           onBackToTop={scrollToTop}
@@ -82,6 +92,12 @@ export function App() {
 
       {/* Footer */}
       <Footer onBackToTop={scrollToTop} />
+
+      {/* The Marketing Lab Interactive Modal (Section 16) */}
+      <MarketingLabModal
+        isOpen={isLabOpen}
+        onClose={() => setIsLabOpen(false)}
+      />
 
       {/* Toast Feedback */}
       <Toast

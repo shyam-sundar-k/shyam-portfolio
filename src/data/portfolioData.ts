@@ -1,7 +1,9 @@
-import type { Project, ExperienceItem, SkillCategory, AchievementItem } from '../types';
+import type { Project, ExperienceItem, SkillCategory, AchievementItem, MarketingPlatform } from '../types';
 
 export const personalInfo = {
   name: "Shyam Sundar K",
+  wordmark: "SHYAM SUNDAR®",
+  brandConcept: "Creative ideas meet data. Digital experiences become opportunities. Growth begins with curiosity.",
   role: "Digital Marketing Executive",
   company: "Marvice",
   location: "Bengaluru, Karnataka, India",
@@ -16,73 +18,210 @@ export const personalInfo = {
   },
   careerDirection: "Performance Marketing",
   heroCopy: {
-    introLabel: "DIGITAL MARKETING EXECUTIVE · BENGALURU, INDIA",
-    headlineLine1: "Creative thinking.",
-    headlineLine2: "Digital strategy.",
-    headlineLine3: "Performance in progress.",
-    supporting: "I'm Shyam Sundar K, a digital marketing professional at Marvice with a technical foundation and an interest in building smarter, more measurable marketing campaigns. I'm developing my skills across digital advertising, analytics, content, and campaign optimization as I work toward performance marketing.",
+    introLabel: "DIGITAL MARKETING EXECUTIVE / BENGALURU, INDIA",
+    headlineLine1: "CREATIVE",
+    headlineLine2: "MINDS.",
+    headlineLine3: "DATA-DRIVEN",
+    headlineLine4: "MOVES.",
+    positioningLine: "Building my path from digital marketing to performance-driven growth.",
+    supporting: "I'm Shyam Sundar K, a Digital Marketing Executive at Marvice in Bengaluru. I bring together creative thinking, digital advertising, analytics, and a technical foundation as I continue developing toward performance marketing.",
     currentBadge: "CURRENTLY · DIGITAL MARKETING EXECUTIVE AT MARVICE",
     imageAnnotation: "CREATIVE MINDSET / ANALYTICAL CURIOSITY"
   },
   aboutCopy: {
-    eyebrow: "01 / THE PERSON BEHIND THE WORK",
-    headline: "A technical foundation. A creative mindset. A growing focus on performance.",
-    p1: "My background in Computer Science and Business Systems has shaped the way I approach digital experiences: with curiosity about how things work, attention to detail, and an interest in solving problems.",
-    p2: "Today, I work as a Digital Marketing Executive at Marvice in Bengaluru. My interests span digital advertising, content, social media, SEO fundamentals, and analytics.",
-    p3: "I'm particularly interested in performance marketing because it brings creative ideas together with audience insights, measurement, experimentation, and continuous improvement.",
-    p4: "I'm building my capabilities one project, one insight, and one learning experience at a time.",
+    eyebrow: "01 / THE PERSON BEHIND THE CAMPAIGNS",
+    headline: "Marketing meets a mind built for technology.",
+    p1: "I'm Shyam Sundar K, a Digital Marketing Executive at Marvice in Bengaluru. My background in Computer Science and Business Systems shapes the way I approach digital experiences, problem-solving, and new ideas.",
+    p2: "My interests span digital advertising, content, social media, SEO fundamentals, and analytics. I'm particularly interested in performance marketing because it connects creative strategy with measurement, experimentation, and continuous improvement.",
+    p3: "I'm building my career by learning how digital campaigns work, how audiences respond, and how better decisions can come from better insights.",
     personalDetail: "Outside digital marketing, I enjoy university-level football, Python, data science, web development, and learning Japanese."
-  }
+  },
+  pillars: [
+    { number: "01", label: "CREATIVITY", desc: "Audience-first messaging, ad copywriting, and conceptual hooks." },
+    { number: "02", label: "DATA", desc: "GA4 behavioral tracking, UTM attribution, and campaign diagnostics." },
+    { number: "03", label: "GROWTH", desc: "Disciplined testing, iterative optimization, and technical curiosity." }
+  ],
+  connectedKeywords: [
+    "CREATIVE THINKING",
+    "DIGITAL ADVERTISING",
+    "AUDIENCE INSIGHTS",
+    "ANALYTICAL CURIOSITY",
+    "CONTINUOUS LEARNING"
+  ]
 };
+
+export const floatingChips = [
+  { label: "DIGITAL ADS", color: "#37E7FF", border: "rgba(55, 231, 255, 0.4)", position: "top-2 -left-4 sm:-left-8", delay: "0s" },
+  { label: "META ADS", color: "#9A6BFF", border: "rgba(154, 107, 255, 0.4)", position: "top-20 -right-2 sm:-right-8", delay: "1.2s" },
+  { label: "GOOGLE ADS", color: "#D7FF62", border: "rgba(215, 255, 98, 0.4)", position: "bottom-28 -left-3 sm:-left-6", delay: "2.1s" },
+  { label: "GOOGLE ANALYTICS", color: "#37E7FF", border: "rgba(55, 231, 255, 0.4)", position: "bottom-10 -right-2 sm:-right-6", delay: "0.8s" },
+  { label: "CREATIVE THINKING", color: "#FF6B9A", border: "rgba(255, 107, 154, 0.4)", position: "top-44 -left-4 sm:-left-10", delay: "1.8s" },
+  { label: "PERFORMANCE MARKETING", color: "#D7FF62", border: "rgba(215, 255, 98, 0.4)", position: "-bottom-4 left-1/4", delay: "2.6s" }
+];
+
+export const marketingPlatforms: MarketingPlatform[] = [
+  {
+    id: "meta-ads",
+    name: "Meta Ads",
+    category: "Paid Social Advertising",
+    badge: "Active Platform Exposure",
+    brandColor: "#0081FB",
+    accentBg: "rgba(0, 129, 251, 0.12)",
+    roleInStack: "Campaign Hierarchy & Audience Targeting",
+    description: "Hands-on exposure configuring campaign goals, ad sets, lookalike audience structures, and testing ad formats.",
+    capabilities: [
+      "Campaign objective alignment (Traffic & Engagement)",
+      "Ad creative testing (Carousel & Single Image)",
+      "Audience targeting & demographic segmentation",
+      "Ads Manager reporting & metric observation"
+    ]
+  },
+  {
+    id: "google-ads",
+    name: "Google Ads",
+    category: "Search & Intent Marketing",
+    badge: "Active Platform Exposure",
+    brandColor: "#4285F4",
+    accentBg: "rgba(66, 133, 244, 0.12)",
+    roleInStack: "Search Intent & Match Types",
+    description: "Practical knowledge of high-intent search query structure, keyword match logic, and ad extensions.",
+    capabilities: [
+      "Keyword research & match type exploration",
+      "Search ad headline and description drafting",
+      "Negative keyword structuring",
+      "Quality score fundamentals"
+    ]
+  },
+  {
+    id: "google-analytics",
+    name: "Google Analytics (GA4)",
+    category: "Telemetry & Attribution",
+    badge: "Active Platform Exposure",
+    brandColor: "#E37400",
+    accentBg: "rgba(227, 116, 0, 0.12)",
+    roleInStack: "Event Models & User Journeys",
+    description: "Using GA4 to monitor user acquisition channels, event engagements, session duration, and traffic sources.",
+    capabilities: [
+      "User acquisition & traffic source analysis",
+      "Standard GA4 event monitoring",
+      "UTM parameter validation for campaigns",
+      "Engagement rate & bounce diagnostics"
+    ]
+  },
+  {
+    id: "google-search-console",
+    name: "Google Search Console",
+    category: "Organic Search & Indexing",
+    badge: "Foundational / Active Learning",
+    brandColor: "#0F9D58",
+    accentBg: "rgba(15, 157, 88, 0.12)",
+    roleInStack: "Organic Discovery & Queries",
+    description: "Inspecting organic search impressions, average position trends, and on-page indexing health.",
+    capabilities: [
+      "Query click-through & impressions review",
+      "Indexing status & crawl oversight",
+      "Organic keyword performance trends"
+    ]
+  },
+  {
+    id: "canva",
+    name: "Canva",
+    category: "Creative Production",
+    badge: "Active Platform Exposure",
+    brandColor: "#00C4CC",
+    accentBg: "rgba(0, 196, 204, 0.12)",
+    roleInStack: "Rapid Social & Ad Assets",
+    description: "Designing fast-turnaround visual assets, social creatives, and promotional banners for digital distribution.",
+    capabilities: [
+      "Platform-specific aspect ratios (1:1, 9:16)",
+      "Visual hierarchy & typographical layout",
+      "Brand consistency & color styling"
+    ]
+  },
+  {
+    id: "figma",
+    name: "Figma",
+    category: "UI/UX & Creative Strategy",
+    badge: "Technical Tooling",
+    brandColor: "#F24E1E",
+    accentBg: "rgba(242, 78, 30, 0.12)",
+    roleInStack: "Wireframing & Storyboarding",
+    description: "Prototyping landing page layouts, creative ad storyboard concepts, and user conversion flows.",
+    capabilities: [
+      "Landing page section wireframing",
+      "Ad storyboard concepts & layout systems",
+      "Interactive component design"
+    ]
+  },
+  {
+    id: "html-css",
+    name: "HTML5 & CSS3",
+    category: "Web Infrastructure",
+    badge: "Technical Tooling",
+    brandColor: "#E44D26",
+    accentBg: "rgba(228, 77, 38, 0.12)",
+    roleInStack: "On-Page Optimization & DOM",
+    description: "Understanding web document structure, meta tags, responsive behavior, and technical SEO hygiene.",
+    capabilities: [
+      "Semantic HTML & Open Graph markup",
+      "Responsive layout debugging",
+      "Core Web Vitals awareness"
+    ]
+  }
+];
 
 export const performanceFocusAreas = [
   {
     number: "01",
-    title: "Audience & Strategy",
-    summary: "Understanding audiences, messaging, content, campaign objectives, and the role of creative strategy in digital marketing.",
+    title: "AUDIENCE & STRATEGY",
+    summary: "Understanding audiences, communication, creative messaging, and campaign objectives.",
     details: [
-      "Defining core buyer personas and search/scroll intent",
-      "Mapping creative angles to distinct customer stages",
-      "Content planning aligned with commercial brand objectives",
-      "Ad-copywriting tailored for organic and paid discovery"
+      "Defining target buyer intent & customer journey stages",
+      "Structuring creative messaging hooks tailored to awareness levels",
+      "Aligning content calendars with commercial objectives",
+      "Connecting value propositions with ad-copy angles"
     ],
-    status: "Active Practice & Planning"
+    status: "Active Practice & Planning",
+    glowColor: "#37E7FF"
   },
   {
     number: "02",
-    title: "Paid Media",
-    summary: "Developing practical knowledge of Meta Ads and Google Ads, including campaign structure, audience targeting, creative testing, and advertising fundamentals.",
+    title: "PAID MEDIA",
+    summary: "Building on exposure to Meta Ads and Google Ads, developing knowledge of campaign structures, targeting, and paid-media fundamentals.",
     details: [
       "Campaign hierarchy: Objectives, Ad Sets, and Creative Variants",
-      "Meta Ads Manager exploration: Custom & Lookalike audience logic",
-      "Google Ads fundamentals: Search intent, keywords, and match types",
-      "Ad formats: Carousels, single image, video placements, and copy hooks"
+      "Meta Ads Manager: Custom audience and interest targeting logic",
+      "Google Ads: Search intent mapping, match types, and ad assets",
+      "Creative variant testing for scroll-stopping hooks"
     ],
-    status: "Platform Exposure & Learning"
+    status: "Platform Exposure & Learning",
+    glowColor: "#9A6BFF"
   },
   {
     number: "03",
-    title: "Analytics & Measurement",
-    summary: "Using Google Analytics and campaign reporting to understand user behavior, traffic sources, and how digital activity can be evaluated.",
+    title: "MEASUREMENT",
+    summary: "Using Google Analytics and reporting tools to understand digital behavior, traffic, and campaign activity.",
     details: [
-      "GA4 event models: Page views, sessions, engagements, and conversions",
-      "Traffic attribution: Organic search, direct, social, and referral pathways",
-      "Campaign UTM parameter structuring for clear source tracking",
-      "Exporting and inspecting behavioral metrics for actionable insights"
+      "GA4 user engagement tracking & event attribution models",
+      "Traffic breakdown across organic, direct, referral, and paid",
+      "Consistent UTM tagging protocols for campaign reporting",
+      "Behavioral drop-off analysis to identify friction points"
     ],
-    status: "Platform Exposure & Reporting"
+    status: "Platform Exposure & Reporting",
+    glowColor: "#D7FF62"
   },
   {
     number: "04",
-    title: "Testing & Optimization",
-    summary: "Building toward a data-informed approach to experimentation, performance analysis, and continuous campaign improvement.",
+    title: "OPTIMIZATION",
+    summary: "Developing the mindset to investigate performance, test hypotheses, and improve decisions using reliable evidence.",
     details: [
-      "Formulating clear hypotheses before creative or copy changes",
-      "A/B creative testing methodologies and variable isolation",
-      "Landing page content alignment with ad messaging",
-      "Iterative review loops to identify drop-off patterns"
+      "Formulating hypothesis-driven testing roadmaps",
+      "A/B creative testing isolating single visual/copy variables",
+      "Landing page alignment ensuring ad promise continuity",
+      "Iterative feedback loops eliminating wasted spend"
     ],
-    status: "Directional Development"
+    status: "Directional Development",
+    glowColor: "#FF6B9A"
   }
 ];
 
@@ -94,7 +233,7 @@ export const experienceItems: ExperienceItem[] = [
     location: "Bengaluru, Karnataka, India",
     period: "Current Position",
     isCurrent: true,
-    description: "Working in digital marketing while building my experience across digital channels, marketing execution, and performance-oriented thinking.",
+    description: "Working in digital marketing while building experience across digital channels and developing a stronger focus on performance-oriented marketing.",
     responsibilities: [
       "Contributing to digital marketing execution across multi-channel digital touchpoints.",
       "Developing exposure to Meta Ads, Google Ads, and campaign setup fundamentals.",
@@ -103,13 +242,13 @@ export const experienceItems: ExperienceItem[] = [
       "Applying structured keyword research fundamentals and website content optimization."
     ],
     toolsAndPlatforms: [
-      "Meta Ads Manager",
+      "Meta Ads",
       "Google Ads",
-      "Google Analytics (GA4)",
+      "Google Analytics",
       "Content Planning",
       "Campaign Tracking"
     ],
-    note: "All claims grounded in active professional execution; no fabricated budgets, spend figures, or client metrics."
+    note: "All claims strictly grounded in active professional execution; no fabricated budgets, ad spend figures, or client metrics."
   },
   {
     id: "future-focus",
@@ -118,11 +257,11 @@ export const experienceItems: ExperienceItem[] = [
     location: "Salem, Tamil Nadu, India",
     period: "April – July 2025",
     isCurrent: false,
-    description: "Built mobile application features with cross-platform architecture and cloud backend integration.",
+    description: "Developed mobile application features with cross-platform architecture and cloud backend integration.",
     responsibilities: [
-      "Developed responsive mobile app features and user interfaces using Flutter and Dart.",
-      "Implemented Firebase Authentication and Cloud Firestore to support robust user flows and secure data capture.",
-      "Supported rigorous testing, defect logging, and debugging, contributing to a reported 25% reduction in application issues during development testing."
+      "Developed mobile application features using Flutter and Dart.",
+      "Implemented Firebase Authentication and Cloud Firestore to support secure user flows and structured data capture.",
+      "Supported rigorous testing, defect logging, and debugging that contributed to a reported 25% reduction in application issues during development testing."
     ],
     toolsAndPlatforms: [
       "Flutter",
@@ -150,7 +289,7 @@ export const experienceItems: ExperienceItem[] = [
       "AWS EC2",
       "AWS S3",
       "AWS IAM",
-      "Cloud Infrastructure"
+      "Cloud Infra"
     ],
     note: "Foundational cloud systems experience reinforcing technical problem-solving capabilities."
   }
@@ -160,18 +299,18 @@ export const projects: Project[] = [
   {
     id: "agrosmart",
     title: "AgroSmart",
-    category: "AI CONCEPT · DIGITAL PRODUCT",
+    category: "AI CONCEPT / DIGITAL PRODUCT",
     badge: "Conceptual Digital Product",
     description: "An AI-driven smart agriculture platform concept exploring how soil, weather, image, crop, and market-price data could support agricultural decisions.",
     keyElements: [
-      "Data-driven crop recommendations based on soil conditions",
-      "Computer vision concept for plant-disease identification",
-      "Fertilizer schedules and water-efficient irrigation guidance"
+      "Crop recommendations based on multi-variable soil parameters",
+      "Plant-disease detection via computer vision leaf diagnostics",
+      "Fertilizer and irrigation guidance aligned with real-time weather"
     ],
-    tags: ["Product Concept", "AI Architecture", "Data Integration", "Agriculture Tech"],
+    tags: ["Product Concept", "AI Architecture", "Data Ingestion", "Agtech"],
     isConcept: true,
     caseStudy: {
-      context: "Small and medium-scale farming frequently faces crop loss and sub-optimal yields due to delayed disease identification, weather volatility, and lack of timely agronomic advisories.",
+      context: "Small and medium-scale agriculture faces crop loss and sub-optimal yields due to delayed disease identification, weather volatility, and lack of timely agronomic advisories.",
       audience: "Agronomists, progressive farmers, and agricultural cooperative managers seeking data-assisted field recommendations.",
       strategy: "Design an integrated conceptual workflow that ingests multimodal inputs (soil sensors, localized meteorological data, and mobile leaf captures) to produce actionable, plain-language agricultural decisions.",
       execution: "Architected conceptual modules for: 1) Image-based leaf symptom triage, 2) Crop suitability matrix based on N-P-K soil profiles, and 3) Weather-reactive irrigation alerts.",
@@ -184,9 +323,9 @@ export const projects: Project[] = [
   {
     id: "adzap-pitching",
     title: "ADZAP — Campaign Ideation",
-    category: "ADVERTISING · CREATIVE THINKING",
+    category: "ADVERTISING / CREATIVE THINKING",
     badge: "Creative Pitch Competition",
-    description: "Participated in a national-level talent fest involving fast-paced ad pitching, rapid campaign ideation, and live audience presentation.",
+    description: "Participated in a national-level talent fest involving advertising concepts, ad pitching, and presentation.",
     keyElements: [
       "Rapid creative hook generation under timed constraints",
       "Audience-centric value proposition packaging",
@@ -208,9 +347,9 @@ export const projects: Project[] = [
   {
     id: "future-case-studies",
     title: "The Next Experiment Starts Here",
-    category: "IN PROGRESS · PORTFOLIO DEVELOPMENT",
+    category: "IN DEVELOPMENT",
     badge: "Upcoming Marketing Studies",
-    description: "Building a collection of practical marketing case studies focused on advertising, analytics, SEO, content strategy, and performance-oriented thinking.",
+    description: "Building a portfolio of practical marketing case studies spanning advertising, analytics, SEO, content strategy, and performance-oriented thinking.",
     keyElements: [
       "Controlled audience targeting experiment blueprints",
       "Search intent to content alignment workflows",
@@ -223,7 +362,7 @@ export const projects: Project[] = [
       audience: "Future hiring managers, growth team leads, and collaborative performance marketers looking for transparent, data-grounded execution.",
       strategy: "Publish transparent case studies following a strict 8-point editorial format: Context, Audience, Strategy, Execution, Tools, Measurement, Verified Outcomes, and Learnings.",
       execution: "Establishing benchmark tracking protocols across organic content discovery, keyword ranking shifts, and ad platform learning phases.",
-      toolsUsed: ["Meta Ads Manager", "Google Ads", "Google Analytics 4", "Google Search Console", "Excel"],
+      toolsUsed: ["Meta Ads", "Google Ads", "Google Analytics 4", "Google Search Console", "Excel"],
       measurementApproach: "Grounded metrics only: verifiable engagement rates, documented campaign parameters, and clear diagnostic takeaways.",
       verifiedOutcomes: "Portfolio framework built and ready for real case additions as campaigns run and verified performance data becomes available.",
       learningsAndNextSteps: "Ensuring every case study prioritizes honest diagnostic learnings over vanity metrics."
@@ -233,7 +372,7 @@ export const projects: Project[] = [
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: "Digital Marketing",
+    category: "DIGITAL MARKETING",
     description: "Core principles of audience discovery, organic engagement, and campaign planning.",
     skills: [
       { name: "Digital Marketing Fundamentals", tag: "Core" },
@@ -243,7 +382,7 @@ export const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    category: "Advertising & Analytics",
+    category: "ADVERTISING & ANALYTICS",
     description: "Platforms and quantitative methods for tracking digital activity.",
     skills: [
       { name: "Meta Ads", tag: "Platform Exposure" },
@@ -254,7 +393,7 @@ export const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    category: "Content & Communication",
+    category: "CONTENT & COMMUNICATION",
     description: "Writing and messaging that transforms complex ideas into compelling stories.",
     skills: [
       { name: "Blog Writing", tag: "Editorial" },
@@ -264,7 +403,7 @@ export const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    category: "SEO & Web",
+    category: "SEO & WEB",
     description: "Organic search visibility and fundamental web technologies.",
     skills: [
       { name: "SEO Fundamentals", tag: "Organic Search" },
@@ -275,7 +414,7 @@ export const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    category: "Design & Productivity",
+    category: "DESIGN & PRODUCTIVITY",
     description: "Visual creation and structured data organization.",
     skills: [
       { name: "Canva", tag: "Visuals" },
@@ -284,7 +423,7 @@ export const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    category: "Technical Foundation",
+    category: "TECHNICAL FOUNDATION",
     description: "Engineering systems and cloud infrastructure experience.",
     skills: [
       { name: "Flutter", tag: "Mobile UI" },

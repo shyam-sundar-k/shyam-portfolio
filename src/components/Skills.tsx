@@ -10,47 +10,50 @@ export const Skills: React.FC = () => {
   const filterCategory = (categoryName: string) => {
     if (selectedFilter === 'All') return true;
     if (selectedFilter === 'Marketing & Ads') {
-      return categoryName === 'Digital Marketing' || categoryName === 'Advertising & Analytics';
+      return categoryName === 'DIGITAL MARKETING' || categoryName === 'ADVERTISING & ANALYTICS';
     }
     if (selectedFilter === 'Analytics & SEO') {
-      return categoryName === 'Advertising & Analytics' || categoryName === 'SEO & Web';
+      return categoryName === 'ADVERTISING & ANALYTICS' || categoryName === 'SEO & WEB';
     }
     if (selectedFilter === 'Content & Design') {
-      return categoryName === 'Content & Communication' || categoryName === 'Design & Productivity';
+      return categoryName === 'CONTENT & COMMUNICATION' || categoryName === 'DESIGN & PRODUCTIVITY';
     }
     if (selectedFilter === 'Technical') {
-      return categoryName === 'Technical Foundation' || categoryName === 'SEO & Web';
+      return categoryName === 'TECHNICAL FOUNDATION' || categoryName === 'SEO & WEB';
     }
     return true;
   };
 
   return (
-    <section id="skills" className="py-20 sm:py-28 bg-[#EAE9E1] border-t border-[#DADAD2] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-20 sm:py-28 bg-[#080B14] border-t border-[rgba(180,200,255,0.14)] relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-10 w-96 h-96 bg-[#37E7FF]/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Eyebrow */}
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#6D6D65]">
-            05 / MY TOOLKIT
+          <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#37E7FF]">
+            05 / THE TOOLKIT
           </span>
-          <div className="h-px bg-[#DADAD2] flex-1 max-w-xs" />
+          <div className="h-px bg-gradient-to-r from-[#37E7FF]/40 to-transparent flex-1 max-w-xs" />
         </div>
 
         {/* Section Headline */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-[#171815] tracking-tight max-w-2xl leading-[1.15]">
-              “Creative execution, technical curiosity, and analytical foundations.”
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-[#F5F7FF] tracking-tight max-w-2xl leading-[1.12]">
+              “A mix of creative, technical, and analytical thinking.”
             </h2>
           </div>
-          <div className="text-xs text-[#6D6D65] max-w-md font-sans">
+          <div className="text-xs text-[#A6B0C8] max-w-md font-sans">
             Categorized by practical discipline. Honest capability labeling without arbitrary percentage bars or vanity scores.
           </div>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-[#DADAD2]">
-          <span className="text-[11px] font-mono uppercase tracking-wider text-[#6D6D65] font-semibold mr-2">
+        <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-[rgba(180,200,255,0.12)]">
+          <span className="text-[11px] font-mono uppercase tracking-wider text-[#A6B0C8] font-semibold mr-2">
             View Filter:
           </span>
           {filterTabs.map((tab) => (
@@ -59,8 +62,8 @@ export const Skills: React.FC = () => {
               onClick={() => setSelectedFilter(tab)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold transition-all duration-200 cursor-pointer ${
                 selectedFilter === tab
-                  ? 'bg-[#171815] text-[#F6F5F0] shadow-xs'
-                  : 'bg-[#F6F5F0] text-[#171815] hover:bg-[#DADAD2] border border-[#DADAD2]'
+                  ? 'bg-[#37E7FF] text-[#080B14] shadow-[0_0_15px_rgba(55,231,255,0.4)]'
+                  : 'bg-[#101527] text-[#A6B0C8] hover:text-[#F5F7FF] border border-[rgba(180,200,255,0.14)]'
               }`}
             >
               {tab}
@@ -75,18 +78,18 @@ export const Skills: React.FC = () => {
             .map((cat, idx) => (
               <div
                 key={idx}
-                className="bg-[#F6F5F0] p-6 sm:p-7 rounded-xl border border-[#DADAD2] hover:border-[#171815] transition-all duration-200 flex flex-col justify-between group shadow-xs hover:shadow-md"
+                className="glass-panel p-6 sm:p-7 rounded-2xl border hover:border-[#37E7FF]/50 transition-all duration-300 flex flex-col justify-between group hover:shadow-[0_0_25px_-5px_rgba(55,231,255,0.15)]"
               >
                 <div>
                   {/* Category Header */}
-                  <div className="pb-4 mb-4 border-b border-[#DADAD2]">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#6D6D65] block font-semibold">
+                  <div className="pb-4 mb-4 border-b border-[rgba(180,200,255,0.12)]">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#37E7FF] block font-semibold">
                       Category {String(idx + 1).padStart(2, '0')}
                     </span>
-                    <h3 className="font-display font-bold text-lg text-[#171815]">
+                    <h3 className="font-display font-bold text-lg text-[#F5F7FF]">
                       {cat.category}
                     </h3>
-                    <p className="text-xs text-[#6D6D65] mt-1 leading-relaxed">
+                    <p className="text-xs text-[#A6B0C8] mt-1 leading-relaxed font-normal">
                       {cat.description}
                     </p>
                   </div>
@@ -98,17 +101,17 @@ export const Skills: React.FC = () => {
                       return (
                         <div
                           key={sIdx}
-                          className="flex items-center justify-between p-2.5 rounded-lg bg-[#EAE9E1]/60 hover:bg-[#EAE9E1] transition-colors border border-transparent hover:border-[#DADAD2]"
+                          className="flex items-center justify-between p-2.5 rounded-lg bg-[#080B14]/60 hover:bg-[#080B14] transition-colors border border-[rgba(180,200,255,0.08)] hover:border-[rgba(55,231,255,0.3)]"
                         >
-                          <span className="text-xs sm:text-sm font-medium text-[#171815]">
+                          <span className="text-xs sm:text-sm font-medium text-[#F5F7FF]">
                             {skill.name}
                           </span>
                           {skill.tag && (
                             <span
                               className={`text-[10px] font-mono px-2 py-0.5 rounded-xs font-semibold ${
                                 isExposure
-                                  ? 'bg-[#C5ED70] text-[#171815]'
-                                  : 'bg-[#DADAD2] text-[#171815]'
+                                  ? 'bg-[#37E7FF]/15 text-[#37E7FF] border border-[#37E7FF]/30'
+                                  : 'bg-[#151D32] text-[#A6B0C8] border border-[rgba(180,200,255,0.1)]'
                               }`}
                             >
                               {skill.tag}
@@ -121,10 +124,10 @@ export const Skills: React.FC = () => {
                 </div>
 
                 {/* Footer status */}
-                <div className="pt-4 mt-6 border-t border-[#DADAD2]/70 flex items-center justify-between text-[11px] font-mono text-[#6D6D65]">
+                <div className="pt-4 mt-6 border-t border-[rgba(180,200,255,0.1)] flex items-center justify-between text-[11px] font-mono text-[#A6B0C8]">
                   <span>{cat.skills.length} Capabilities</span>
-                  <span className="flex items-center gap-1 text-[#171815]">
-                    <Check className="w-3 h-3 text-[#171815]" />
+                  <span className="flex items-center gap-1 text-[#D7FF62]">
+                    <Check className="w-3 h-3" />
                     Verified
                   </span>
                 </div>
@@ -133,11 +136,11 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Framing & Integrity Note */}
-        <div className="mt-12 p-4 bg-[#F6F5F0] border border-[#DADAD2] rounded-xl flex items-start gap-3">
-          <Info className="w-4 h-4 text-[#171815] shrink-0 mt-0.5" />
-          <div className="text-xs text-[#6D6D65] leading-relaxed">
-            <strong className="text-[#171815] font-semibold">Platform Exposure Distinction: </strong>
-            Tools tagged with <span className="bg-[#C5ED70] text-[#171815] px-1.5 py-0.5 rounded-xs font-mono font-semibold">Platform Exposure</span> indicate active hands-on familiarity and campaign setup practice, intentionally distinguished from claims of senior campaign ownership.
+        <div className="mt-12 p-4 rounded-xl bg-[#101527] border border-[rgba(180,200,255,0.14)] flex items-start gap-3">
+          <Info className="w-4 h-4 text-[#37E7FF] shrink-0 mt-0.5" />
+          <div className="text-xs text-[#A6B0C8] leading-relaxed">
+            <strong className="text-[#F5F7FF] font-semibold">Platform Exposure Distinction: </strong>
+            Tools tagged with <span className="bg-[#37E7FF]/20 text-[#37E7FF] px-1.5 py-0.5 rounded-xs font-mono font-semibold">Platform Exposure</span> indicate active hands-on familiarity and campaign setup practice, intentionally distinguished from claims of senior campaign ownership.
           </div>
         </div>
 

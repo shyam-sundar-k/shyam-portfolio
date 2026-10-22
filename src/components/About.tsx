@@ -1,99 +1,148 @@
 import React from 'react';
 import { personalInfo } from '../data/portfolioData';
-import { Terminal, Lightbulb, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { Terminal, Lightbulb, TrendingUp, CheckCircle2, Network, Sparkles } from 'lucide-react';
 
 export const About: React.FC = () => {
   const pillars = [
     {
       icon: Terminal,
       title: "Technical Foundation",
-      subtitle: "CSBS & Systems Thinking",
-      desc: "Formed through Computer Science and Business Systems studies, cloud infrastructure, and mobile architecture."
+      subtitle: "CSBS & SYSTEMS LOGIC",
+      desc: "Shaped through Computer Science and Business Systems studies, cloud architecture, and data structures.",
+      color: "#37E7FF"
     },
     {
       icon: Lightbulb,
-      title: "Creative Mindset",
-      subtitle: "Story & Positioning",
-      desc: "Distilling complex concepts into ad copy, engaging content narratives, and empathetic user journeys."
+      title: "Creative Strategy",
+      subtitle: "MESSAGE & HOOKS",
+      desc: "Translating customer pain points into concise ad copy, engaging narratives, and structured value propositions.",
+      color: "#9A6BFF"
     },
     {
       icon: TrendingUp,
-      title: "Growing Focus on Performance",
-      subtitle: "Data & Optimization",
-      desc: "Developing toward quantitative campaign measurement, A/B experimentation, and conversion intelligence."
+      title: "Performance Focus",
+      subtitle: "TELEMETRY & OPTIMIZATION",
+      desc: "Progressing toward quantitative campaign measurement, A/B creative experimentation, and conversion intelligence.",
+      color: "#D7FF62"
     }
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-28 bg-[#F6F5F0] border-t border-[#DADAD2] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 sm:py-28 bg-[#080B14] border-t border-[rgba(180,200,255,0.14)] relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/3 -left-40 w-96 h-96 bg-[#37E7FF]/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Editorial Section Eyebrow */}
+        {/* Section Eyebrow */}
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#6D6D65]">
+          <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#37E7FF]">
             {personalInfo.aboutCopy.eyebrow}
           </span>
-          <div className="h-px bg-[#DADAD2] flex-1 max-w-xs" />
+          <div className="h-px bg-gradient-to-r from-[#37E7FF]/40 to-transparent flex-1 max-w-xs" />
         </div>
 
         {/* Section Headline */}
-        <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-[#171815] tracking-tight max-w-4xl mb-12 sm:mb-16 leading-[1.15]">
-          “A technical foundation. A creative mindset. A growing focus on performance.”
+        <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-[#F5F7FF] tracking-tight max-w-4xl mb-12 sm:mb-16 leading-[1.12]">
+          “Marketing meets a mind built for technology.”
         </h2>
 
-        {/* Editorial Asymmetric Grid */}
+        {/* Split Layout: Editorial Biography & Connected Keywords Composition */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Core Narrative (Narrow, editorial column width) */}
-          <div className="lg:col-span-7 space-y-6 text-base sm:text-lg text-[#171815]/90 leading-relaxed font-normal">
-            <p className="first-letter:text-5xl first-letter:font-display first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-[#171815]">
+          {/* Left Column: Authentic Biography */}
+          <div className="lg:col-span-7 space-y-6 text-base sm:text-lg text-[#A6B0C8] leading-relaxed font-normal">
+            <p className="text-[#F5F7FF] font-medium leading-relaxed">
               {personalInfo.aboutCopy.p1}
             </p>
-            <p className="text-[#6D6D65]">
+            <p className="border-l-2 border-[#37E7FF] pl-4 text-[#F5F7FF] italic bg-[#101527]/50 py-3 rounded-r-lg">
               {personalInfo.aboutCopy.p2}
             </p>
-            <p className="text-[#171815] font-medium border-l-2 border-[#C5ED70] pl-4 italic">
+            <p>
               {personalInfo.aboutCopy.p3}
-            </p>
-            <p className="text-[#6D6D65]">
-              {personalInfo.aboutCopy.p4}
             </p>
 
             {/* Personal Dimension Annotation */}
-            <div className="mt-8 pt-6 border-t border-[#DADAD2] bg-[#EAE9E1]/50 p-5 rounded-lg border">
-              <span className="text-[11px] font-mono uppercase tracking-wider text-[#6D6D65] block mb-1.5 font-semibold">
-                Personal Dimension · Beyond the Desk
+            <div className="mt-8 pt-6 border-t border-[rgba(180,200,255,0.12)] glass-panel p-5 rounded-xl">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-[#37E7FF] block mb-1.5 font-semibold flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                Personal Dimension // Beyond Digital Marketing
               </span>
-              <p className="text-sm text-[#171815] leading-normal font-sans">
+              <p className="text-sm text-[#F5F7FF] leading-normal font-sans">
                 {personalInfo.aboutCopy.personalDetail}
               </p>
             </div>
           </div>
 
-          {/* Right Column: Three Pillars & Verified Snapshot */}
+          {/* Right Column: Connected Keywords Visual Composition */}
           <div className="lg:col-span-5 space-y-6">
             
-            {/* 3 Pillars List */}
-            <div className="space-y-4">
+            {/* The Connected Keywords Matrix */}
+            <div className="p-6 rounded-2xl glass-panel-elevated relative overflow-hidden">
+              <div className="flex items-center justify-between pb-4 mb-5 border-b border-[rgba(180,200,255,0.12)]">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#A6B0C8] flex items-center gap-2">
+                  <Network className="w-4 h-4 text-[#9A6BFF]" />
+                  Cognitive Synthesis
+                </span>
+                <span className="text-[10px] font-mono text-[#D7FF62] bg-[#D7FF62]/10 px-2 py-0.5 rounded-sm">
+                  Active
+                </span>
+              </div>
+
+              {/* Connected node list with glowing lines */}
+              <div className="space-y-3 relative">
+                <div className="absolute left-4 top-4 bottom-4 w-px bg-gradient-to-b from-[#37E7FF] via-[#9A6BFF] to-[#D7FF62] opacity-40 pointer-events-none" />
+
+                {personalInfo.connectedKeywords.map((keyword, kIdx) => {
+                  const colors = ['#37E7FF', '#9A6BFF', '#D7FF62', '#FF6B9A', '#37E7FF'];
+                  const color = colors[kIdx % colors.length];
+
+                  return (
+                    <div
+                      key={kIdx}
+                      className="relative pl-8 group cursor-default transition-transform hover:translate-x-1 duration-200"
+                    >
+                      {/* Node indicator */}
+                      <span
+                        className="absolute left-[13px] top-3 w-2 h-2 rounded-full border transition-all duration-200 group-hover:scale-125"
+                        style={{ backgroundColor: color, borderColor: color }}
+                      />
+
+                      <div className="p-3 rounded-lg bg-[#080B14]/70 border border-[rgba(180,200,255,0.1)] group-hover:border-[rgba(55,231,255,0.4)] transition-colors">
+                        <span className="text-xs font-mono font-bold tracking-wider text-[#F5F7FF]">
+                          {keyword}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Three Pillars Compact Cards */}
+            <div className="space-y-3">
               {pillars.map((pillar, idx) => {
                 const IconComponent = pillar.icon;
                 return (
                   <div
                     key={idx}
-                    className="p-5 bg-[#EAE9E1]/70 border border-[#DADAD2] rounded-xl hover:border-[#171815] transition-all duration-200 group"
+                    className="p-4 rounded-xl glass-panel border hover:border-[#37E7FF]/50 transition-all duration-200 group"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="p-2.5 bg-[#F6F5F0] rounded-lg border border-[#DADAD2] group-hover:bg-[#C5ED70] transition-colors">
-                        <IconComponent className="w-5 h-5 text-[#171815]" />
+                    <div className="flex items-start gap-3.5">
+                      <div
+                        className="p-2 rounded-lg bg-[#080B14] border border-[rgba(180,200,255,0.15)] group-hover:scale-110 transition-transform shrink-0"
+                        style={{ color: pillar.color }}
+                      >
+                        <IconComponent className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#6D6D65] block font-semibold">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#A6B0C8] block font-semibold">
                           {pillar.subtitle}
                         </span>
-                        <h3 className="font-display font-bold text-base text-[#171815] mb-1">
+                        <h3 className="font-display font-bold text-sm text-[#F5F7FF] mb-0.5">
                           {pillar.title}
                         </h3>
-                        <p className="text-xs text-[#6D6D65] leading-relaxed">
+                        <p className="text-xs text-[#A6B0C8] leading-relaxed">
                           {pillar.desc}
                         </p>
                       </div>
@@ -103,27 +152,13 @@ export const About: React.FC = () => {
               })}
             </div>
 
-            {/* Verified Credentials Box */}
-            <div className="p-5 bg-[#171815] text-[#F6F5F0] rounded-xl border border-white/10 space-y-3">
-              <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                <span className="text-xs font-mono uppercase tracking-wider text-[#C5ED70] font-semibold">
-                  Verified Academic & Professional Base
-                </span>
-                <CheckCircle2 className="w-4 h-4 text-[#C5ED70]" />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 text-xs">
-                <div>
-                  <span className="text-[#6D6D65] block text-[10px] uppercase font-mono">Current Org</span>
-                  <span className="font-bold text-[#F6F5F0] text-sm">Marvice</span>
-                  <span className="text-[11px] text-[#DADAD2] block">Bengaluru, India</span>
-                </div>
-                <div>
-                  <span className="text-[#6D6D65] block text-[10px] uppercase font-mono">Degree</span>
-                  <span className="font-bold text-[#F6F5F0] text-sm">B.Tech CSBS</span>
-                  <span className="text-[11px] text-[#DADAD2] block">KIT · 2022–2026</span>
-                </div>
-              </div>
+            {/* Verified Foundation Summary */}
+            <div className="p-4 rounded-xl bg-[#101527] border border-[rgba(180,200,255,0.16)] flex items-center justify-between text-xs font-mono">
+              <span className="text-[#A6B0C8]">B.Tech CSBS (2022–2026) · CGPA 7.2</span>
+              <span className="flex items-center gap-1 text-[#D7FF62]">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                Verified
+              </span>
             </div>
 
           </div>
